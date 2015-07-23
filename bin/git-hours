@@ -1,10 +1,10 @@
 #!/usr/bin/env node
-
+var args = require('minimist')(process.argv);
 var gitHours = require('../');
 
-gitHours.exec({
-  // option: range (steal from dotclock)
-}, function(err, data) {
+gitHours.exec(args, function(err, results) {
   if (err) throw err;
-  console.log(data);
+  results.forEach(function(e) {
+    process.stdout.write(JSON.stringify(e)+'\n');
+  });
 })
