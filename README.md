@@ -1,8 +1,8 @@
-# git-timetrack
+# git-hours
 
-git commit log parser and time extractor
+git commit log parser and hours extractor
 
-format: 2h
+format: [2h]
 
 Requirements:
 

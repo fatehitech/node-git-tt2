@@ -1,0 +1,10 @@
+#!/usr/bin/env node
+
+var gitHours = require('../');
+
+gitHours.exec({
+  // option: range (steal from dotclock)
+}, function(err, data) {
+  if (err) throw err;
+  console.log(data);
+})
