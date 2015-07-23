@@ -20,7 +20,8 @@ gh.exec = function(options, cb) {
         commitParts = commit.trim().split('\n');
         item.sha = commitParts[0];
         item.author = commitParts[1].match(/Author:\s+(.+)/)[1];
-        item.message = commitParts.slice(3, commitParts.length).join('').trim();
+        var msg = commitParts.slice(3, commitParts.length);
+        item.message = msg.join('\n').replace(hoursPattern, '').trim();
         item.date = new Date(commitParts[2].match(/Date:\s+(.+)/)[1]);
         items.push(item);
       }
