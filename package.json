@@ -1,12 +1,13 @@
 {
-  "name": "git-hours",
+  "name": "git-tt2",
   "version": "1.0.0",
-  "description": "git commit log parser and time extractor",
+  "description": "git time tracking by means of required annotations in commit messages",
   "main": "index.js",
+  "bin": "./bin/git-tt2",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Keyvan Fatehi <keyvanfatehi@gmail.com>",
   "license": "ISC",
   "dependencies": {
     "duration-parser": "^1.0.2",
