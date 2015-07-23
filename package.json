@@ -1,5 +1,5 @@
 {
-  "name": "git-timetrack",
+  "name": "git-hours",
   "version": "1.0.0",
   "description": "git commit log parser and time extractor",
   "main": "index.js",
@@ -8,7 +8,8 @@
   },
   "author": "",
   "license": "ISC",
-  "dependencies":{
-    "moment": "2.10.3"
+  "dependencies": {
+    "duration-parser": "^1.0.2",
+    "shelljs": "^0.5.1"
   }
 }
