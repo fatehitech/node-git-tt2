@@ -1,11 +1,8 @@
 var sh = require('shelljs');
+var parseDuration = require('duration-parser');
 var gh = module.exports = {};
 
 var hoursPattern = /\[(((\d+)[h|m])+)\]/;
-
-var parseDuration = function(stamp) {
-  return stamp;
-}
 
 gh.exec = function(options, cb) {
   var gitCmd = 'git log';
@@ -16,7 +13,8 @@ gh.exec = function(options, cb) {
       var matchHours = commit.match(hoursPattern);
       if (matchHours) {
         var item = {}
-        item.hours = parseDuration(matchHours[0]);
+        item.durationInput = matchHours[1];
+        item.duration = parseDuration(matchHours[1]);
         commitParts = commit.trim().split('\n');
         item.sha = commitParts[0];
         item.author = commitParts[1].match(/Author:\s+(.+)/)[1];
